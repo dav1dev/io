@@ -19,6 +19,8 @@ jobs:
     env:
       SOLUTION: "./source/Appccelerate.IO.sln"
     steps:
+    - name: helper
+      run: echo "env.SOLUTION . $env.SOLUTION, SOLUTION . $SOLUTION, ENV_SOLUTION . $ENV_SOLUTION"
     - uses: actions/checkout@v2
     - name: Setup .NET ${{ matrix.dotnet-version }}
       uses: actions/setup-dotnet@v1
