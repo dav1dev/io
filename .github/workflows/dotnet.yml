@@ -16,8 +16,6 @@ jobs:
     env:
       SOLUTION: "./source/Appccelerate.IO.sln"
     steps:
-    - name: helper
-      run: echo "SOLUTION . $env:SOLUTION"
     - uses: actions/checkout@v2
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
