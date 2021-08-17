@@ -16,7 +16,8 @@ jobs:
       matrix:
         operating-system: [ubuntu-latest, windows-latest, macOS-latest]
         dotnet-version: ['5.0.x']
-
+    env:
+      SOLUTION: "./source/Appccelerate.IO.sln"
     steps:
     - uses: actions/checkout@v2
     - name: Setup .NET ${{ matrix.dotnet-version }}
@@ -24,8 +25,8 @@ jobs:
       with:
         dotnet-version: ${{ matrix.dotnet-version }}
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore $env.SOLUTION
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build $env.SOLUTION --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test $env.SOLUTION --no-build --verbosity normal
