@@ -33,7 +33,7 @@
       3.0.0:
       - Supports now .NET Standard 2.0
     </PackageReleaseNotes>
-    <PackageTags>Appccelerate;Appccelerate IO;IO</PackageTags>
+    <PackageTags>Appccelerate;IO</PackageTags>
   </PropertyGroup>
 
   <!-- nuget symbol package -->
